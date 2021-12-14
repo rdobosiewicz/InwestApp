@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "570312844663",
+    "project_id": "inwestapp-14",
+    "storage_bucket": "inwestapp-14.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570312844663:android:9053bd54f3f7278d8bad72",
+        "android_client_info": {
+          "package_name": "com.example.inwestanalist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570312844663-13jrj4r30ghav5bmli8sm8c40v925jrc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv4fIvknCrRVL7E1HhicsYaD4WQpY7Ya0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570312844663-13jrj4r30ghav5bmli8sm8c40v925jrc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

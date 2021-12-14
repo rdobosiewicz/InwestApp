@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="elevation">4dp</dimen>
+    <dimen name="textViewPadding">12dp</dimen>
+    <dimen name="buttonRadius">5dp</dimen>
+</resources>

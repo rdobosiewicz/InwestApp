@@ -1,0 +1,2 @@
+rootProject.name = "InwestAnalist"
+include ':app'
