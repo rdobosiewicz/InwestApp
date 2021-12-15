@@ -8,6 +8,17 @@
     android:useDefaultMargins="true"
     tools:context=".Analist">
 
+    <TextView
+        android:id="@+id/liczbaAkcjiTextV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="8"
+        android:layout_column="0"
+        android:layout_columnSpan="2"
+        android:padding="@dimen/textViewPadding"
+        android:text="Podaj nazwę spółki:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
     <EditText
         android:id="@+id/przychodSpolki"
         android:layout_width="wrap_content"
@@ -15,7 +26,7 @@
         android:layout_row="1"
         android:layout_column="0"
         android:layout_columnSpan="2"
-        android:digits="-1234567890"
+        android:digits="-1234567890,"
         android:ems="10"
         android:inputType="number"
         android:maxLength="12" />
@@ -95,7 +106,7 @@
         android:layout_row="5"
         android:layout_column="0"
         android:layout_columnSpan="2"
-        android:digits="1234567890"
+        android:digits="1234567890,"
         android:ems="10"
         android:inputType="number"
         android:maxLines="10" />
@@ -135,6 +146,27 @@
         android:inputType="number"
         android:maxLength="10" />
 
+    <EditText
+        android:id="@+id/nazwaSpolki"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="9"
+        android:layout_column="0"
+        android:layout_columnSpan="2"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/nazwaSpolkiTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="9"
+        android:layout_column="0"
+        android:layout_columnSpan="2"
+        android:elevation="@dimen/elevation"
+        android:hint="Wpisz nazwę"
+        android:padding="@dimen/textViewPadding"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
     <TextView
         android:id="@+id/liczbaAkcjiTextView"
         android:layout_width="wrap_content"
@@ -151,7 +183,7 @@
         android:id="@+id/obliczWskazniki"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_row="8"
+        android:layout_row="11"
         android:layout_column="0"
         android:layout_columnSpan="2"
         android:layout_gravity="center_horizontal"
@@ -162,7 +194,7 @@
         android:id="@+id/wynikObliczenia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_row="9"
+        android:layout_row="10"
         android:layout_column="0"
         android:layout_columnSpan="2"
         android:padding="@dimen/textViewPadding"

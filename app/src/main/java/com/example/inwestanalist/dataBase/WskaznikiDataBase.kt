@@ -1,10 +1,9 @@
 package com.example.inwestanalist.dataBase
 
 data class WskaznikiDataBase(
-                        val id:Int,
-                        var nazwa: String,
-                        var przychod:Double,
-                        var zysk:Double,
-                        var canaAkcji:Double,
-                        var liczbaAkcji:Double)
+                        var nazwa: String?,
+                        var przychodNaA:Double?,
+                        var zyskNaA:Double?,
+                        var canaAnaZysk:Double?,
+                        var liczbaAkcji:Int?)
 

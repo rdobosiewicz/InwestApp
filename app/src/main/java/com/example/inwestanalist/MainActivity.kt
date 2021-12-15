@@ -5,25 +5,31 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.tasks.OnCanceledListener
-import com.google.android.gms.tasks.OnFailureListener
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuth.*
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
-import java.lang.Exception
 
-class MainActivity : AppCompatActivity(), OnCanceledListener, OnFailureListener {
+class MainActivity : AppCompatActivity() {
+
+
 
     private lateinit var auth: FirebaseAuth
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        auth = Firebase.auth
 
-        auth = getInstance()
-        auth.signInAnonymously().addOnCanceledListener(this).addOnFailureListener(this)
+
+
+
+
+
+
 
 
 
@@ -46,13 +52,6 @@ class MainActivity : AppCompatActivity(), OnCanceledListener, OnFailureListener 
 
     }
 
-    override fun onCanceled() {
-
-    }
-
-    override fun onFailure(p0: Exception) {
-
-    }
 
 
 }

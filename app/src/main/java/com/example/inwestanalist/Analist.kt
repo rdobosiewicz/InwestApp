@@ -9,6 +9,12 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import com.example.inwestanalist.dataBase.WskaznikiDataBase
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_analist.*
 
 class Analist : AppCompatActivity() {
@@ -17,10 +23,15 @@ class Analist : AppCompatActivity() {
     var sumaZyskow = 0
     var cenaAkcji = 0
     var liczbaAkcji = 0
+    var nazwaS =" "
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_analist)
+
+        auth = FirebaseAuth.getInstance()
+        auth.signInAnonymously()
 
 
         //Gui pierwszy wiersz layoutu / First row of layout
@@ -150,18 +161,50 @@ class Analist : AppCompatActivity() {
 
             override fun afterTextChanged(s: Editable?) {}
         })
+        nazwaSpolki.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+                try {
+                    nazwaS = s.toString()
+                    nazwaSpolkiTextView.text = " "
+                    if (nazwaS.isEmpty()) {
+                        nazwaSpolkiTextView.text = "Wpisz kwotę"
+                    }
+
+                } catch (nfe: NumberFormatException){
+                    val text ="Popraw wartość"
+                    val duration = Toast.LENGTH_SHORT
+                    val toast = Toast.makeText(applicationContext, text, duration)
+                    toast.show()
+                    nazwaS = "Brak"
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+
+        })
 
         oblicz.setOnClickListener {
 
-            val wskaźniki = Wskaźniki(sumaPrzychodu,sumaZyskow,cenaAkcji,liczbaAkcji)
+            val wskazniki = Wskazniki(sumaPrzychodu,sumaZyskow,cenaAkcji,liczbaAkcji)
 
-            wskaźniki.wskazniki()
+            wskazniki.wskazniki()
 
-            textViewWynikObliczenia.text = """|Przychód na akcję:  ${wskaźniki.przychodNaAkcje} 
-                    |Zysk na akcję: ${wskaźniki.zyskNaAkcje}
-                    |Cena akcji: ${wskaźniki.cAkcji}
-                    |Cena/Zysk: ${wskaźniki.cenaAkcjiNaZysk}""".trimMargin()
+            textViewWynikObliczenia.text = """Nazwa spółki: $nazwaS
+                    |Przychód na akcję:  ${wskazniki.przychodNaAkcje} 
+                    |Zysk na akcję: ${wskazniki.zyskNaAkcje}
+                    |Cena akcji: ${wskazniki.cAkcji}
+                    |Cena/Zysk: ${wskazniki.cenaAkcjiNaZysk}""".trimMargin()
 
+            var dataBaseWsk = WskaznikiDataBase(nazwaS,wskazniki.przychodNaAkcje, wskazniki.zyskNaAkcje, wskazniki.cenaAkcjiNaZysk, liczbaAkcji)
+            //val firebaseDatabase = FirebaseDatabase.getInstance()
+            //firebaseDatabase.getReference().push().child("Wskazniki").setValue("test")
+            val database = Firebase.database
+            val myRef = database.getReference("message")
+
+            myRef.setValue("Hello, World!")
 
         }
         }
