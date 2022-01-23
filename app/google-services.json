@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "665491949433",
+    "project_id": "investapp-a565e",
+    "storage_bucket": "investapp-a565e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:665491949433:android:3799daea3c4683f9d9d1a8",
+        "android_client_info": {
+          "package_name": "com.example.inwestanalist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "665491949433-tbmqj8dshd7mfe7kj949bnr8jqe5mvjh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.inwestanalist",
+            "certificate_hash": "aad3c58326ecd009d306e5934909ef09d3fd2c56"
+          }
+        },
+        {
+          "client_id": "665491949433-iksn2uhqd0f9n55s0nueq8vg6ej7fjl2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDTV9N5-QnFDTUTZ5bLm0vkhDuFzDlVE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "665491949433-iksn2uhqd0f9n55s0nueq8vg6ej7fjl2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

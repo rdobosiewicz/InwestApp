@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -12,6 +13,7 @@ import androidx.core.widget.addTextChangedListener
 import com.example.inwestanalist.dataBase.WskaznikiDataBase
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -24,14 +26,22 @@ class Analist : AppCompatActivity() {
     var cenaAkcji = 0
     var liczbaAkcji = 0
     var nazwaS =" "
-    private lateinit var auth: FirebaseAuth
+    //private lateinit var auth: FirebaseAuth
+    //private lateinit var database: FirebaseDatabase
+    //private lateinit var ref: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_analist)
 
-        auth = FirebaseAuth.getInstance()
-        auth.signInAnonymously()
+        //private lateinit var auth: FirebaseAuth
+        var firebaseDatabase = FirebaseDatabase.getInstance("https://investapp-a565e-default-rtdb.firebaseio.com/")
+
+
+
+
+
+
 
 
         //Gui pierwszy wiersz layoutu / First row of layout
@@ -198,13 +208,10 @@ class Analist : AppCompatActivity() {
                     |Cena akcji: ${wskazniki.cAkcji}
                     |Cena/Zysk: ${wskazniki.cenaAkcjiNaZysk}""".trimMargin()
 
-            var dataBaseWsk = WskaznikiDataBase(nazwaS,wskazniki.przychodNaAkcje, wskazniki.zyskNaAkcje, wskazniki.cenaAkcjiNaZysk, liczbaAkcji)
-            //val firebaseDatabase = FirebaseDatabase.getInstance()
-            //firebaseDatabase.getReference().push().child("Wskazniki").setValue("test")
-            val database = Firebase.database
-            val myRef = database.getReference("message")
+            //var dataBaseWsk = WskaznikiDataBase(nazwaS,wskazniki.przychodNaAkcje, wskazniki.zyskNaAkcje, wskazniki.cenaAkcjiNaZysk, liczbaAkcji)
+            var databaseReference = firebaseDatabase.getReference()
+            databaseReference.child("Wskazniki").push().setValue("test")
 
-            myRef.setValue("Hello, World!")
 
         }
         }
