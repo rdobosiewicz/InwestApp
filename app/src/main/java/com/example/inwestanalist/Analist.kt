@@ -26,22 +26,12 @@ class Analist : AppCompatActivity() {
     var cenaAkcji = 0
     var liczbaAkcji = 0
     var nazwaS =" "
-    //private lateinit var auth: FirebaseAuth
-    //private lateinit var database: FirebaseDatabase
-    //private lateinit var ref: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_analist)
 
-        //private lateinit var auth: FirebaseAuth
         var firebaseDatabase = FirebaseDatabase.getInstance("https://investapp-a565e-default-rtdb.firebaseio.com/")
-
-
-
-
-
-
 
 
         //Gui pierwszy wiersz layoutu / First row of layout
@@ -208,9 +198,9 @@ class Analist : AppCompatActivity() {
                     |Cena akcji: ${wskazniki.cAkcji}
                     |Cena/Zysk: ${wskazniki.cenaAkcjiNaZysk}""".trimMargin()
 
-            //var dataBaseWsk = WskaznikiDataBase(nazwaS,wskazniki.przychodNaAkcje, wskazniki.zyskNaAkcje, wskazniki.cenaAkcjiNaZysk, liczbaAkcji)
+            var dataBaseWsk = WskaznikiDataBase(nazwaS,wskazniki.przychodNaAkcje, wskazniki.zyskNaAkcje, wskazniki.cenaAkcjiNaZysk, liczbaAkcji)
             var databaseReference = firebaseDatabase.getReference()
-            databaseReference.child("Wskazniki").push().setValue("test")
+            databaseReference.child("Wskazniki").push().setValue(dataBaseWsk)
 
 
         }
