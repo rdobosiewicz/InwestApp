@@ -41,9 +41,15 @@ class MainActivity : AppCompatActivity() {
 
         mainStart.setOnClickListener {
 
-            val intent = Intent(this, Analist::class.java)
-            startActivity(intent)
+            val analistView = Intent(this, Analist::class.java)
+            startActivity(analistView)
 
+        }
+
+        mainHistory.setOnClickListener{
+
+            val historyView = Intent(this, Library::class.java)
+            startActivity(historyView)
         }
 
 
