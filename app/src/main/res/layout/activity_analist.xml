@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_column="0"
+    android:fillViewport="true">
+
+    <GridLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:columnCount="2"
     android:useDefaultMargins="true"
     tools:context=".Analist">
@@ -19,17 +22,17 @@
         android:text="Podaj nazwę spółki:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-    <EditText
-        android:id="@+id/przychodSpolki"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="1"
-        android:layout_column="0"
-        android:layout_columnSpan="2"
-        android:digits="-1234567890,"
-        android:ems="10"
-        android:inputType="number"
-        android:maxLength="12" />
+     <EditText
+         android:id="@+id/pSpolki"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_row="1"
+         android:layout_column="0"
+         android:layout_columnSpan="2"
+         android:digits="-1234567890,"
+         android:ems="10"
+         android:inputType="number|text"
+         android:maxLength="12" />
 
     <TextView
         android:id="@+id/przychodSpolkiTextView"
@@ -188,6 +191,7 @@
         android:layout_columnSpan="2"
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
+        android:background="@drawable/btn"
         android:text="Oblicz" />
 
     <TextView
@@ -201,4 +205,5 @@
         android:text=" "
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-</GridLayout>
+    </GridLayout>
+</ScrollView>

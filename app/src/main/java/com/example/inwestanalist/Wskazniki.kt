@@ -42,6 +42,7 @@ class Wskazniki (var sPrzychodu:Int, var sZysków:Int, var cAkcji:Int, var lAkcj
         przychodNaAkcje = sPrzychodu.toDouble() / lAkcji.toDouble()
         przychodNaAkcje = round(przychodNaAkcje * 1000) / 1000
 
+
         zyskNaAkcje = sZysków.toDouble() / lAkcji.toDouble()
         zyskNaAkcje = round(zyskNaAkcje * 1000) / 1000
 

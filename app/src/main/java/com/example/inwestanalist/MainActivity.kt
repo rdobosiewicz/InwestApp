@@ -33,8 +33,10 @@ class MainActivity : AppCompatActivity() {
         // declare the animation
         val runOfPhoto = AnimationUtils.loadAnimation(this,R.anim.photo)
         val runButton = AnimationUtils.loadAnimation(this, R.anim.button)
+        val runButton2 = AnimationUtils.loadAnimation(this, R.anim.button)
         mainImage.startAnimation(runOfPhoto)
         mainStart.startAnimation(runButton)
+        mainHistory.startAnimation(runButton2)
 
 
 
