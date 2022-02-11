@@ -183,7 +183,6 @@ class Analist : AppCompatActivity() {
 
             val wskazniki = Wskazniki(sumaPrzychodu,sumaZyskow,cenaAkcji,liczbaAkcji)
 
-            wskazniki.wskazniki()
 
             textViewWynikObliczenia.text = """Nazwa spółki: $nazwaS
                     |Przychód na akcję:  ${wskazniki.przychodNaAkcje} 

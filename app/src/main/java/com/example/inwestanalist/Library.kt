@@ -1,5 +1,6 @@
 package com.example.inwestanalist
 
+import android.annotation.SuppressLint
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -62,13 +63,16 @@ class MyNameAdapter(context: Context, val wskaznikiList: List<WskaznikiDataBase>
         return "Test"
     }
     // responsible for rendering out ech row
+    @SuppressLint("SetTextI18n")
     override fun getView(position: Int, convertView: View?, viewGroup: ViewGroup?): View {
 
         val textView = TextView(mContext)
 
         val nameS = wskaznikiList[position]
 
-        textView.text = nameS.nazwa
+        textView.text ="Nazwa: " + nameS.nazwa + "\nCena na zysk: " + nameS.canaAnaZysk + "\nLiczba akcji: " +
+                nameS.liczbaAkcji + "\nZysk na akcję:  " + nameS.zyskNaA + "\nPrzychód na akcję: " + nameS.przychodNaA
+
 
         textView.textSize = 20F
 
