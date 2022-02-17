@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
+        //New view -> entering data in the application
         mainStart.setOnClickListener {
 
             val analistView = Intent(this, Analist::class.java)
@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        //New view -> displaying data in the application
         mainHistory.setOnClickListener{
 
             val historyView = Intent(this, Library::class.java)

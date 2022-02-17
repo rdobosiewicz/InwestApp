@@ -27,22 +27,26 @@ class Analist : AppCompatActivity() {
         var firebaseDatabase = FirebaseDatabase.getInstance("https://investapp-a565e-default-rtdb.firebaseio.com/")
 
 
-        //Gui pierwszy wiersz layoutu / First row of layout
-        //Wykorzystanie rozszerzenia extensions w build.gradle
+        //PL: Gui pierwszy wiersz layoutu / Wykorzystanie rozszerzenia extensions w build.gradle
+        //ANG: First row of layout / Use add-on extensions in build.gradle
         //val przychod = findViewById<EditText>(R.id.przychodSpolki)
         //val textViewPrzychod = findViewById<TextView>(R.id.przychodSpolkiTextView)
 
-        //Gui drugi wiersz layoutu / Second row of layout
+        //PL: Gui drugi wiersz layoutu
+        //ANG: Second row of layout
         val editTextZysk = findViewById<EditText>(R.id.zyskNettoSpolki)
         val textViewZysk = findViewById<TextView>(R.id.zyskSpolkiTextView)
 
-        //Gui trzeci wiersz layoutu / Third row of layout
+        //PL: Gui trzeci wiersz layoutu
+        //ANG: Third row of layout
         val editTextCenaAkcji = findViewById<EditText>(R.id.cenaAkcji)
         val textViewCenaAkcji = findViewById<TextView>(R.id.cenaAkcjiTextView)
 
-        //Gui czwarty wiersz layoutu / Fourth row of layout
+        //Pl: Gui czwarty wiersz layoutu
+        //ANG: Fourth row of layout
         val editTextLiczbaAkcji = findViewById<EditText>(R.id.liczbaAkcji)
         val textViewLiczbaAkcji = findViewById<TextView>(R.id.liczbaAkcjiTextView)
+
 
         val oblicz = findViewById<Button>(R.id.obliczWskazniki)
         val textViewWynikObliczenia = findViewById<TextView>(R.id.wynikObliczenia)
@@ -50,7 +54,8 @@ class Analist : AppCompatActivity() {
 
 
 
-        //Zapis przychodu do zmiennej / Entry value of revenue to variable
+        //PL: Zapis przychodu do zmiennej
+        //ANG: Entry value of revenue to variable
         pSpolki.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
@@ -77,7 +82,8 @@ class Analist : AppCompatActivity() {
 
             })
 
-        //Zapis zysku do zmiennej / Entry value of accounting profit to variable
+        //PL: Zapis zysku do zmiennej
+        //ANG: Entry value of accounting profit to variable
         editTextZysk.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
@@ -103,7 +109,8 @@ class Analist : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {}
         })
 
-        //Zapis liczby akcji do zmiennej
+        //PL: Zapis liczby akcji do zmiennej
+        //ANG: Writing the number of shares into a variable
         editTextLiczbaAkcji.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
@@ -129,7 +136,8 @@ class Analist : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {}
         })
 
-        //Zapis ceny akcji do zmiennej / Entry price of share to variable
+        //PL: Zapis ceny akcji do zmiennej
+        //ANG: Entry price of share to variable
         editTextCenaAkcji.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 

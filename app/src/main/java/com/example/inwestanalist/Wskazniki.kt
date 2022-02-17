@@ -2,9 +2,12 @@ package com.example.inwestanalist
 
 import kotlin.math.round
 
+//PL: Ta klasa umożliwa obliczenie wskaźników giełdowych informujących o atrakcyjności spółki
+//ANG: This class allows the calculation of rate that provide information about the investment attractiveness of a company
+
 class Wskazniki (var sPrzychodu:Int, var sZysków:Int, var cAkcji:Int, var lAkcji: Int){
 
-    //wzór do obliczenia wskaźnika przychod na akcję
+    // Revenue per share
     var przychodNaAkcje = obliczPrzychodNaAkcje()
         get() {
             if (lAkcji>0 && sPrzychodu>0){
@@ -15,7 +18,7 @@ class Wskazniki (var sPrzychodu:Int, var sZysków:Int, var cAkcji:Int, var lAkcj
             }
         }
 
-    //wzór do obliczenia wskaźnika zysk na akcję
+    // Profit per share
     var zyskNaAkcje = obliczZyskNaAkcje()
         get() {
             if (sZysków>0 && lAkcji>0){
@@ -26,7 +29,7 @@ class Wskazniki (var sPrzychodu:Int, var sZysków:Int, var cAkcji:Int, var lAkcj
             }
         }
 
-    //wzór do obliczenia wskaźnika cena akcji na zysk
+    //Pries of share per profit
     var cenaAkcjiNaZysk = obliczAkcjeNaZysk()
         get() {
             if (cAkcji>0 && sZysków>0){
@@ -36,7 +39,8 @@ class Wskazniki (var sPrzychodu:Int, var sZysków:Int, var cAkcji:Int, var lAkcj
                 return field
             }
         }
-    //obliczanie wyniku wskaźnika, zaokrąglenie wyniku
+    //PL: Wzór do obliczenia wskaźnika przychod na akcję
+    //ANG: Formula for calculating of rate revenue per share
     fun obliczPrzychodNaAkcje():Double{
 
         przychodNaAkcje = sPrzychodu.toDouble() / lAkcji.toDouble()
@@ -45,6 +49,8 @@ class Wskazniki (var sPrzychodu:Int, var sZysków:Int, var cAkcji:Int, var lAkcj
         return przychodNaAkcje
     }
 
+    //PL: Wzór do obliczenia wskaźnika zysk na akcję
+    //ANG: Formula for calculating of rate profit per share
     fun obliczZyskNaAkcje():Double{
 
         zyskNaAkcje = sZysków.toDouble() / lAkcji.toDouble()
@@ -52,7 +58,8 @@ class Wskazniki (var sPrzychodu:Int, var sZysków:Int, var cAkcji:Int, var lAkcj
 
         return zyskNaAkcje
     }
-
+    //PL: Wzór do obliczenia wskaźnika cena akcji na zysk
+    //ANG: Formula for calculating rate pries of share per profit
     fun obliczAkcjeNaZysk():Double{
 
         cenaAkcjiNaZysk =cAkcji.toDouble() / (sZysków.toDouble()/lAkcji.toDouble())
